@@ -1,6 +1,6 @@
 package com.game.MentalBattle.game.magic.water;
 
-import com.game.MentalBattle.game.magic.Impact;
+import com.game.MentalBattle.game.Impact;
 import com.game.MentalBattle.game.magic.MagicSkill;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

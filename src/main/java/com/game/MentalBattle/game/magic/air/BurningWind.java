@@ -1,6 +1,6 @@
 package com.game.MentalBattle.game.magic.air;
 
-import com.game.MentalBattle.game.magic.Impact;
+import com.game.MentalBattle.game.Impact;
 import com.game.MentalBattle.game.magic.MagicSkill;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -11,7 +11,7 @@ public class BurningWind implements MagicSkill {
     private int price;
     @Value("${descriptionBurningWind}")
     private String description;
-    private final Impact impact = Impact.DAMAGE;
+    private final Impact impact = Impact.ATTACK_MINUS;
     @Value("${impactVolumeBurningWind}")
     private int impactVolume;
     @Value("${renewPeriodBurningWind}")

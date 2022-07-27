@@ -1,5 +1,7 @@
 package com.game.MentalBattle.game.magic;
 
+import com.game.MentalBattle.game.Impact;
+
 public interface MagicSkill {
     int getPrice();
     String getDescription();
