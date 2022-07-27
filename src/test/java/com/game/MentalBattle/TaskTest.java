@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class TaskTest {
 
     @ParameterizedTest
-    @CsvFileSource(resources = "/test/taskTest.csv",delimiter = '|',lineSeparator = "&")
+    @CsvFileSource(resources = "/taskTest.csv",delimiter = '|',lineSeparator = "&")
     public void findOutputExampleTest(String condition,int answer,int random){
         Task task = new Task();
         Map<String,Integer> expected = new LinkedHashMap<>();
