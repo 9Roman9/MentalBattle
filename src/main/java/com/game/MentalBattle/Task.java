@@ -2,6 +2,7 @@ package com.game.MentalBattle;
 
 import org.springframework.stereotype.Component;
 
+import java.time.LocalTime;
 import java.util.*;
 
 @Component
@@ -10,9 +11,12 @@ public class Task {
     private Map<String, Integer> examples = new LinkedHashMap<>();
     private List<Integer> usedRandoms = new ArrayList<>();
     private Map<String, Integer> outputExample = new LinkedHashMap<>();
-    int number;
+    private int start;
+    private int finish;
+    private int money = 0;
 
     public Map<String, Integer> getExample(){
+        int number;
         outputExample.clear();
         Random random = new Random();
         while (true){
@@ -74,4 +78,16 @@ public class Task {
         }
         return outputExample;
     }
+
+    public void fixStart(){ start = LocalTime.now().getSecond(); }
+
+    public void fixFinish(){ finish = LocalTime.now().getSecond(); }
+
+    public void calculateScore(){
+        int time = finish-start;
+        if (time<=30) money+=300;
+        else money += Math.max(300 - time, 30);
+    }
+
+    public int getMoney(){return money;}
 }
