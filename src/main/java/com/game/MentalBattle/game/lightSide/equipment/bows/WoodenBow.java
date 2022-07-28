@@ -12,8 +12,6 @@ public class WoodenBow implements Weapon {
     @Value("${damageWoodenBow}")
     private int damage;
     private final Impact impact = Impact.CRUCIAL;
-    @Value("${impactVolumeWoodenBow}")
-    private int impactVolume;
 
     @Override
     public int getPrice() {
@@ -28,10 +26,5 @@ public class WoodenBow implements Weapon {
     @Override
     public Impact getImpact() {
         return impact;
-    }
-
-    @Override
-    public int getImpactVolume() {
-        return impactVolume;
     }
 }

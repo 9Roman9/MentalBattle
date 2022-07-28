@@ -12,12 +12,10 @@ public class BurningWind implements MagicSkill {
     @Value("${descriptionBurningWind}")
     private String description;
     private final Impact impact = Impact.ATTACK_MINUS;
+    @Value("${damageBurningWind}")
+    private int damage;
     @Value("${impactVolumeBurningWind}")
     private int impactVolume;
-    @Value("${renewPeriodBurningWind}")
-    private int renewPeriod;
-    @Value("${renewPeriodBurningWind}")
-    boolean additionalStrike;
 
     @Override
     public int getPrice() {
@@ -33,21 +31,10 @@ public class BurningWind implements MagicSkill {
     }
 
     @Override
-    public int getRenewPeriod() { return renewPeriod; }
-
-    @Override
     public int getImpactVolume() { return impactVolume; }
 
     @Override
-    public int getPercentage() {
-        return 0;
-    }
-
-    @Override
-    public int getDuration() { return 0; }
-
-    @Override
-    public boolean isAdditionalStrike() {
-        return additionalStrike;
+    public int getDamage() {
+        return damage;
     }
 }

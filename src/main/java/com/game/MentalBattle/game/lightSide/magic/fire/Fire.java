@@ -9,11 +9,11 @@ import org.springframework.stereotype.Component;
 @Component("fireBean")
 public class Fire implements Element {
     AnnotationConfigApplicationContext context;
-    private final MagicSkill skill1;
-    private final MagicSkill skill2;
-    private final MagicSkill skill3;
+    private MagicSkill skill1;
+    private MagicSkill skill2;
+    private MagicSkill skill3;
 
-    public Fire() {
+    public void setFireMagic(){
         context = new AnnotationConfigApplicationContext(Config.class);
         skill1 = context.getBean("meteorRainBean",MeteorRain.class);
         skill2 = context.getBean("dragonBreathBean",DragonBreath.class);

@@ -3,19 +3,19 @@ package com.game.MentalBattle.game.lightSide.magic.air;
 import com.game.MentalBattle.game.lightSide.Impact;
 import com.game.MentalBattle.game.lightSide.magic.MagicSkill;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+@Component("tornadoBean")
 public class Tornado implements MagicSkill {
     @Value("${priceTornado}")
     private int price;
     @Value("${descriptionTornado}")
     private String description;
+    @Value("${damageTornado}")
+    private int damage;
     private final Impact impact = Impact.DAMAGE;
     @Value("${impactVolumeTornado}")
     private int impactVolume;
-    @Value("${renewPeriodTornado}")
-    private int renewPeriod;
-    @Value("${renewPeriodTornado}")
-    boolean additionalStrike;
 
     @Override
     public int getPrice() {
@@ -31,21 +31,10 @@ public class Tornado implements MagicSkill {
     }
 
     @Override
-    public int getRenewPeriod() { return renewPeriod; }
-
-    @Override
     public int getImpactVolume() { return impactVolume; }
 
     @Override
-    public int getPercentage() {
-        return 0;
-    }
-
-    @Override
-    public int getDuration() { return 0; }
-
-    @Override
-    public boolean isAdditionalStrike() {
-        return additionalStrike;
+    public int getDamage() {
+        return damage;
     }
 }

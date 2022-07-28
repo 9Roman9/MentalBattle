@@ -10,15 +10,15 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class Earth implements Element {
     AnnotationConfigApplicationContext context;
-    private final MagicSkill skill1;
-    private final MagicSkill skill2;
-    private final MagicSkill skill3;
+    private MagicSkill skill1;
+    private MagicSkill skill2;
+    private MagicSkill skill3;
 
-    public Earth() {
+    public void setEarthMagic(){
         context = new AnnotationConfigApplicationContext(Config.class);
-        skill1 = context.getBean("EarthquakeBean", MeteorRain.class);
-        skill2 = context.getBean("leafProtectionBreathBean", DragonBreath.class);
-        skill3 = context.getBean("lianaBean", FlamingWhip.class);
+        skill1 = context.getBean("EarthquakeBean", Earthquake.class);
+        skill2 = context.getBean("leafProtectionBreathBean", LeafProtection.class);
+        skill3 = context.getBean("lianaBean", Liana.class);
     }
 
     @Override

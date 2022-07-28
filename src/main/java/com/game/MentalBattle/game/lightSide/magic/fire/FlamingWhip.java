@@ -11,13 +11,11 @@ public class FlamingWhip implements MagicSkill {
     private int price;
     @Value("${descriptionFlamingWhip}")
     private String description;
-    private Impact impact = Impact.ATTACK_PLUS;
+    @Value("${damageFlamingWhip}")
+    private int damage;
+    private final Impact impact = Impact.ATTACK_PLUS;
     @Value("${impactVolumeFlamingWhip}")
     private int impactVolume;
-    @Value("${renewPeriodFlamingWhip}")
-    private int renewPeriod;
-    @Value("${additionalStrikeFlamingWhip}")
-    private boolean additionalStrike;
 
     @Override
     public int getPrice() {
@@ -33,23 +31,10 @@ public class FlamingWhip implements MagicSkill {
     }
 
     @Override
-    public int getRenewPeriod() { return renewPeriod; }
-
-    @Override
     public int getImpactVolume() { return impactVolume; }
 
     @Override
-    public int getPercentage() {
-        return 0;
-    }
-
-    @Override
-    public int getDuration() {
-        return 0;
-    }
-
-    @Override
-    public boolean isAdditionalStrike() {
-        return additionalStrike;
+    public int getDamage() {
+        return damage;
     }
 }

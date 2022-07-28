@@ -12,15 +12,15 @@ import org.springframework.stereotype.Component;
 @Component("airBean")
 public class Air implements Element {
     AnnotationConfigApplicationContext context;
-    private final MagicSkill skill1;
-    private final MagicSkill skill2;
-    private final MagicSkill skill3;
+    private MagicSkill skill1;
+    private MagicSkill skill2;
+    private MagicSkill skill3;
 
-    public Air() {
+    public void setAirMagic(){
         context = new AnnotationConfigApplicationContext(Config.class);
-        skill1 = context.getBean("Bean", MeteorRain.class);
-        skill2 = context.getBean("Bean", DragonBreath.class);
-        skill3 = context.getBean("Bean", FlamingWhip.class);
+        skill1 = context.getBean("tornadoBean", Tornado.class);
+        skill2 = context.getBean("mysticFogBean", MysticFog.class);
+        skill3 = context.getBean("burningWindBean", BurningWind.class);
     }
 
     @Override

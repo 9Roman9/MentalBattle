@@ -5,10 +5,7 @@ import com.game.MentalBattle.game.lightSide.Impact;
 public interface MagicSkill {
     int getPrice();
     String getDescription();
+    int getDamage();
     Impact getImpact();
-    int getRenewPeriod();
     int getImpactVolume();
-    int getPercentage();
-    int getDuration();
-    boolean isAdditionalStrike();
 }

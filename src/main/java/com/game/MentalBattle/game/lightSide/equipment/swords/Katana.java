@@ -12,8 +12,6 @@ public class Katana implements Weapon {
     @Value("${damageKatana}")
     private int damage;
     private final Impact impact = Impact.ATTACK_PLUS;
-    @Value("${impactVolumeKatana}")
-    private int impactVolume;
 
     @Override
     public int getPrice() {
@@ -28,10 +26,5 @@ public class Katana implements Weapon {
     @Override
     public Impact getImpact() {
         return impact;
-    }
-
-    @Override
-    public int getImpactVolume() {
-        return impactVolume;
     }
 }

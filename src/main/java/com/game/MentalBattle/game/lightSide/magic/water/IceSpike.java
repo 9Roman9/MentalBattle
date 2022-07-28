@@ -11,13 +11,11 @@ public class IceSpike implements MagicSkill {
     private int price;
     @Value("${descriptionIceSpike}")
     private String description;
-    private Impact impact = Impact.DEFENCE_MINUS;
+    @Value("${damageIceSpike}")
+    private int damage;
+    private final Impact impact = Impact.ATTACK_PLUS;
     @Value("${impactVolumeIceSpike}")
     private int impactVolume;
-    @Value("${renewPeriodIceSpike}")
-    private int renewPeriod;
-    @Value("${additionalStrikeIceSpike}")
-    private boolean additionalStrike;
 
     @Override
     public int getPrice() {
@@ -33,23 +31,10 @@ public class IceSpike implements MagicSkill {
     }
 
     @Override
-    public int getRenewPeriod() { return renewPeriod; }
-
-    @Override
     public int getImpactVolume() { return impactVolume; }
 
     @Override
-    public int getPercentage() {
-        return 0;
-    }
-
-    @Override
-    public int getDuration() {
-        return 0;
-    }
-
-    @Override
-    public boolean isAdditionalStrike() {
-        return additionalStrike;
+    public int getDamage() {
+        return damage;
     }
 }

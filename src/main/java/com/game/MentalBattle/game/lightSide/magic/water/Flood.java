@@ -11,13 +11,11 @@ public class Flood implements MagicSkill {
     private int price;
     @Value("${descriptionFlood}")
     private String description;
+    @Value("${damageFlood}")
+    private int damage;
     private final Impact impact = Impact.DAMAGE;
     @Value("${impactVolumeFlood}")
     private int impactVolume;
-    @Value("${renewPeriodFlood}")
-    private int renewPeriod;
-    @Value("${additionalStrikeFlood}")
-    private boolean additionalStrike;
 
     @Override
     public int getPrice() {
@@ -33,23 +31,10 @@ public class Flood implements MagicSkill {
     }
 
     @Override
-    public int getRenewPeriod() { return renewPeriod; }
-
-    @Override
     public int getImpactVolume() { return impactVolume; }
 
     @Override
-    public int getPercentage() {
-        return 0;
-    }
-
-    @Override
-    public int getDuration() {
-        return 0;
-    }
-
-    @Override
-    public boolean isAdditionalStrike() {
-        return additionalStrike;
+    public int getDamage() {
+        return damage;
     }
 }

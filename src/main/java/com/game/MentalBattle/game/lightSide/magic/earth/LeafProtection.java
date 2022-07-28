@@ -11,15 +11,11 @@ public class LeafProtection implements MagicSkill {
     private int price;
     @Value("${descriptionLeafProtection}")
     private String description;
+    @Value("${damageLeafProtection}")
+    private int damage;
     private final Impact impact = Impact.DEFENCE_PLUS;
     @Value("${impactVolumeLeafProtection}")
     private int impactVolume;
-    @Value("${durationLeafProtection}")
-    private int duration;
-    @Value("${renewPeriodLeafProtection}")
-    private int renewPeriod;
-    @Value("${renewPeriodLeafProtection}")
-    private boolean additionalStrike;
 
     @Override
     public int getPrice() {
@@ -35,23 +31,10 @@ public class LeafProtection implements MagicSkill {
     }
 
     @Override
-    public int getRenewPeriod() { return renewPeriod; }
-
-    @Override
     public int getImpactVolume() { return impactVolume; }
 
     @Override
-    public int getPercentage() {
-        return 0;
-    }
-
-    @Override
-    public int getDuration() {
-        return duration;
-    }
-
-    @Override
-    public boolean isAdditionalStrike() {
-        return additionalStrike;
+    public int getDamage() {
+        return damage;
     }
 }

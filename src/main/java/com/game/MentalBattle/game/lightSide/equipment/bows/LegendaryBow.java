@@ -10,8 +10,6 @@ public class LegendaryBow implements Weapon {
     @Value("${damageLegendaryBow}")
     private int damage;
     private final Impact impact = Impact.CRUCIAL;
-    @Value("${impactVolumeLegendaryBow}")
-    private int impactVolume;
 
     @Override
     public int getPrice() {
@@ -26,10 +24,5 @@ public class LegendaryBow implements Weapon {
     @Override
     public Impact getImpact() {
         return impact;
-    }
-
-    @Override
-    public int getImpactVolume() {
-        return impactVolume;
     }
 }

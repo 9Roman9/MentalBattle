@@ -12,15 +12,15 @@ import org.springframework.stereotype.Component;
 @Component("waterBean")
 public class Water implements Element {
     AnnotationConfigApplicationContext context;
-    private final MagicSkill skill1;
-    private final MagicSkill skill2;
-    private final MagicSkill skill3;
+    private MagicSkill skill1;
+    private MagicSkill skill2;
+    private MagicSkill skill3;
 
-    public Water() {
+    public void setWaterMagic(){
         context = new AnnotationConfigApplicationContext(Config.class);
-        skill1 = context.getBean("floodBean", MeteorRain.class);
-        skill2 = context.getBean("healingSpringBean", DragonBreath.class);
-        skill3 = context.getBean("iceSpikeBean", FlamingWhip.class);
+        skill1 = context.getBean("floodBean", Flood.class);
+        skill2 = context.getBean("healingSpringBean", HealingSpring.class);
+        skill3 = context.getBean("iceSpikeBean", IceSpike.class);
     }
 
     @Override

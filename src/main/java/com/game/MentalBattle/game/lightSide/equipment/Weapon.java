@@ -6,5 +6,4 @@ public interface Weapon {
     int getPrice();
     int getDamage();
     Impact getImpact();
-    int getImpactVolume();
 }

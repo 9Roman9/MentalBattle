@@ -11,9 +11,7 @@ public class BlacksmithHammer implements Weapon {
     private int price;
     @Value("${damageBlacksmithHammer}")
     private int damage;
-    private final Impact impact = Impact.ATTACK_PLUS;
-    @Value("${impactVolumeBlacksmithHammer}")
-    private int impactVolume;
+    private final Impact impact = Impact.STUN;
 
     @Override
     public int getPrice() {
@@ -28,10 +26,5 @@ public class BlacksmithHammer implements Weapon {
     @Override
     public Impact getImpact() {
         return impact;
-    }
-
-    @Override
-    public int getImpactVolume() {
-        return impactVolume;
     }
 }

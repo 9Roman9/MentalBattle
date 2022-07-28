@@ -11,13 +11,11 @@ public class DragonBreath implements MagicSkill {
     private int price;
     @Value("${descriptionDragonBreath}")
     private String description;
+    @Value("${damageDragonBreath}")
+    private int damage;
     private final Impact impact = Impact.DAMAGE;
     @Value("${impactVolumeDragonBreath}")
     private int impactVolume;
-    @Value("${renewPeriodDragonBreath}")
-    private int renewPeriod;
-    @Value("${additionalStrikeDragonBreath}")
-    private boolean additionalStrike;
 
     @Override
     public int getPrice() {
@@ -33,20 +31,10 @@ public class DragonBreath implements MagicSkill {
     }
 
     @Override
-    public int getRenewPeriod() { return renewPeriod; }
-
-    @Override
     public int getImpactVolume() { return impactVolume; }
 
     @Override
-    public int getPercentage() {
-        return 0;
+    public int getDamage() {
+        return damage;
     }
-
-    @Override
-    public int getDuration() {
-        return 0;
-    }
-
-    public boolean isAdditionalStrike() { return additionalStrike; }
 }

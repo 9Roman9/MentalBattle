@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 public class ProtectiveShield implements Cloth{
     @Value("${priceProtectiveShield}")
     private int price;
-    @Value("${protectionProtectiveShield}")
+    @Value("${protectionValueProtectiveShield}")
     private int protectionValue;
 
     @Override

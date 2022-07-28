@@ -11,15 +11,11 @@ public class Earthquake implements MagicSkill {
     private int price;
     @Value("${descriptionEarthquake}")
     private String description;
+    @Value("${damageEarthquake}")
+    private int damage;
     private final Impact impact = Impact.STUN;
     @Value("${impactVolumeEarthquake}")
     private int impactVolume;
-    @Value("$percentageEarthquake")
-    private int percentage;
-    @Value("${renewPeriodEarthquake}")
-    private int renewPeriod;
-    @Value("${additionalStrikeEarthquake}")
-    private boolean additionalStrike;
 
     @Override
     public int getPrice() {
@@ -35,23 +31,10 @@ public class Earthquake implements MagicSkill {
     }
 
     @Override
-    public int getRenewPeriod() { return renewPeriod; }
-
-    @Override
     public int getImpactVolume() { return impactVolume; }
 
     @Override
-    public int getPercentage() {
-        return percentage;
-    }
-
-    @Override
-    public int getDuration() {
-        return 0;
-    }
-
-    @Override
-    public boolean isAdditionalStrike() {
-        return additionalStrike;
+    public int getDamage() {
+        return damage;
     }
 }
