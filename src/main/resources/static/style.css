@@ -49,20 +49,20 @@ body {
 }
 
 div {
-    font-size: 14px;
+    font-size: 20px;
     border-radius: 10px;
     border: 5px solid #2c1608;
     position: absolute;
     font-family: Georgia;
     color: #fbf9ed;
     background-color: rgba(0,0,0,0.5);
+    padding: 10px;
 }
 
 .text {
     width: 55%;
     height: 50%;
     margin: 20px 0px 0px 10px;
-    overflow: scroll;
 }
 
 .image {
@@ -97,4 +97,16 @@ img {
     right: 35px;
     margin: 20px 20px 20px 20px;
     padding: 1px 1px 1px 1px;
+}
+
+a {
+    color: #f1d17f;
+}
+
+a:hover {
+    color: #a4771e;
+}
+
+span{
+    color: #f1d17f;
 }

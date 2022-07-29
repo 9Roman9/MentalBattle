@@ -1,4 +1,4 @@
-package com.game.MentalBattle;
+package com.game.MentalBattle.game;
 
 import org.springframework.stereotype.Component;
 
@@ -14,6 +14,8 @@ public class Task {
     private int start;
     private int finish;
     private int money = 0;
+    private int correctAnswers = 0;
+    private int wrongAnswers = 0;
 
     public Map<String, Integer> getExample(){
         int number;
@@ -63,7 +65,6 @@ public class Task {
     }
 
     public Map<String, Integer> findOutputExample(int number){
-        Map<String, Integer> outputExample = new LinkedHashMap<>();
         Iterator<String> iteratorCondition = examples.keySet().iterator();
         Iterator<Integer> iteratorAnswer = examples.values().iterator();
         int count = 0;
@@ -83,11 +84,26 @@ public class Task {
 
     public void fixFinish(){ finish = LocalTime.now().getSecond(); }
 
-    public void calculateScore(){
-        int time = finish-start;
-        if (time<=30) money+=300;
-        else money += Math.max(300 - time, 30);
+    public void calculateScore(int correctAnswer, int providedAnswer){
+        if (correctAnswer!=providedAnswer){
+            wrongAnswers++;
+            money+=30;
+        }
+        else {
+            correctAnswers++;
+            int time = finish-start;
+            if (time<=30) money+=300;
+            else money += Math.max(300 - time, 30);
+        }
     }
 
     public int getMoney(){return money;}
+
+    public int getCorrectAnswers() {
+        return correctAnswers;
+    }
+
+    public int getWrongAnswers() {
+        return wrongAnswers;
+    }
 }

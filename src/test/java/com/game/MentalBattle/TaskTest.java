@@ -1,5 +1,6 @@
 package com.game.MentalBattle;
 
+import com.game.MentalBattle.game.Task;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 

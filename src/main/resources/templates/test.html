@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/static/style.css" th:href="@{/style.css}">
+    <title>MentalBattle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="text" th:text="${riddle}"></div>
+<div class="image"> <img id="img" src="/img/Farmer.JPEG"> </div>
+<div class="output">
+    <form th:action="${times}" method="post">
+        <input type="text" name="answer">
+    </form>
+</div>
+<div class="indicators">
+    <p>Кількість правильних відповідей: <span th:text="${correctAnswers}"></span></p>
+    <p>Кількість неправильних відповідей: <span th:text="${wrongAnswers}"></span></p>
+</div>
+</body>
+</html>
