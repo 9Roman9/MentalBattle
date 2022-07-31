@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/static/style.css" th:href="@{/style.css}">
+    <title>MentalBattle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="text">- У нас стихія Землі асоціюється з матір'ю, що робить цю стихію дуже шанованою. Власника амулетів землі оберігає сама Матінка-Природа. Наразі можу тобі запропонувати такі амулети:<br><br>
+    <span>Землетрус</span> - у ворога земля розходиться між ногами в буквальному значенні, що завдає йому шкоди до <span th:text="${damageEarthquake}"></span> од.
+    Крім того, існує ймовірність у <span th:text="${impactVolumeEarthquake}"></span>%, що він не встоїть на ногах і провалиться в одну з тріщин, що дасть змогу тобі повторно завдати удару.
+    Його ціна - <span th:text="${priceEarthquake}"></span> песо.<br><br>
+    <span>Листовий оберіг</span> - у цьому амулеті сповна проявляється турбота Матінки-Природи. На 3 ходи твоє тіло огортають пальмові листи, що посилює твій захист перед майбутніми ударами ворога на <span th:text="${impactVolumeLeafProtection}"></span>%. При цьому ворогу буде завдано шкоди до <span th:text="${damageLeafProtection}"></span> од.
+    Цей амулет я віддам тобі за <span th:text="${priceLeafProtection}"></span> песо.<br><br>
+    <span>Разюча ліана</span> - Удар цієї малютки може ворогу дорого обійтися. Сама ліана завдає шкоди до <span th:text="${damageLiana}"></span> од.
+    Крім того, ліана оплутана отруйними шипами, які лишать на тілі ворога жахливі гнійники протягом 3 ходів. Удар по цим ділянкам призведе до пекельного болю. Цей амулет підвищує ймовірність подвійного ураження зброєю на <span th:text="${impactVolumeLiana}"></span>%.
+    Я візьму за нього <span th:text="${priceLiana}"></span> песо.<br><br>
+</div>
+<div class="image"> <img id="img" src="/img/Earth.JPEG"> </div>
+<div class="output">
+    <form th:action="makePurchase" method="post">
+        <button name="name" value="earthquake"><span class="spanButton" th:text="${descriptionEarthquake}"></span></button>
+    </form><br>
+    <form th:action="makePurchase" method="post">
+        <button name="name" value="leafProtection"><span class="spanButton" th:text="${descriptionLeafProtection}"></span></button>
+    </form><br>
+    <form th:action="makePurchase" method="post">
+        <button name="name" value="liana"><span class="spanButton" th:text="${descriptionLiana}"></span></button>
+    </form><br>
+    <a href="magic">Назад</a>
+</div>
+<div class="indicators">
+    <p>Песо: <span th:text="${money}"></span></p><br>
+    <p>Магічні амулети:</p>
+    <span th:text="${magic1}"></span><br>
+    <span th:text="${magic2}"></span><br>
+    <span th:text="${magic3}"></span><br>
+    <span th:text="${magic4}"></span><br>
+    <span th:text="${magic5}"></span><br>
+    <span th:text="${magic6}"></span><br>
+    <span th:text="${magic7}"></span>
+</div>
+</body>
+</html>

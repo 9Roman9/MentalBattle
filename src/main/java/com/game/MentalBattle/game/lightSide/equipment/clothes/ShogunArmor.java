@@ -9,6 +9,8 @@ public class ShogunArmor implements Cloth{
     private int price;
     @Value("${protectionValueShogunArmor}")
     private int protectionValue;
+    @Value("${descriptionShogunArmor}")
+    private String description;
 
     @Override
     public int getPrice() {
@@ -18,5 +20,10 @@ public class ShogunArmor implements Cloth{
     @Override
     public int getProtectionValue() {
         return protectionValue;
+    }
+
+    @Override
+    public String getDescription() {
+        return description;
     }
 }

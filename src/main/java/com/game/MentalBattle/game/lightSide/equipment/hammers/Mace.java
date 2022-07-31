@@ -11,6 +11,8 @@ public class Mace implements Weapon {
     private int price;
     @Value("${damageMace}")
     private int damage;
+    @Value("${descriptionMace}")
+    private String description;
     private final Impact impact = Impact.STUN;
 
     @Override
@@ -26,5 +28,10 @@ public class Mace implements Weapon {
     @Override
     public Impact getImpact() {
         return impact;
+    }
+
+    @Override
+    public String getDescription() {
+        return description;
     }
 }

@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/static/style.css" th:href="@{/style.css}">
+    <title>MentalBattle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="text">- Надійні обладунки - запорука успішного поєдинку. Тому раджу ретельно обирати їх. Можу запропонувати такі обладунки:<br><br>
+    <span>Римські обладунки</span> - зразок якісних обладунків. Мало хто знає, але саме завдяки їм римлян було нелегко здолати. Вони здатні поглинути <span th:text="${protectionValueRomeMail}"></span> од. шкоди.
+    Я їх готовий віддати за <span th:text="${priceRomeMail}"></span> песо.<br><br>
+    <span>Обладунки Сьогуна</span> - гадаю, цей товар не потребує реклами. Саме завдяки цим обладункам всі впізнають грізних японських генералів. Ці обладунки поглинають <span th:text="${protectionValueShogunArmor}"></span> од. шкоди.
+    Продаю їх за <span th:text="${priceShogunArmor}"></span> песо.<br><br>
+    <span>Силове поле</span> - найсучасніше обладнання захисту. Скажу по секрету, навіть для Чаклуна буде несподіванкою, якщо ти з'явишся на поєдинок з цією технологією. Силове поле здатне поглинути <span th:text="${protectionValueProtectiveShield}"></span> од. шкоди.
+    Ти ж розумієш, що нові технології сьогодні коштують недешево, тому їх можна буде придбати за <span th:text="${priceProtectiveShield}"></span> песо.<br><br>
+</div>
+<div class="image"> <img id="img" src="/img/Equipment.JPEG"> </div>
+<div class="output">
+    <form th:action="makePurchase" method="post">
+        <button name="name" value="romeMail"><span class="spanButton" th:text="${descriptionRomeMail}"></span></button>
+    </form><br>
+    <form th:action="makePurchase" method="post">
+        <button name="name" value="shogunArmor"><span class="spanButton" th:text="${descriptionShogunArmor}"></span></button>
+    </form><br>
+    <form th:action="makePurchase" method="post">
+        <button name="name" value="protectiveShield"><span class="spanButton" th:text="${descriptionProtectiveShield}"></span></button>
+    </form><br>
+    <a href="products">Назад</a>
+</div>
+<div class="indicators">
+    <p>Песо: <span th:text="${money}"></span></p><br>
+    <p>Магічні амулети:</p>
+    <span th:text="${magic1}"></span><br>
+    <span th:text="${magic2}"></span><br>
+    <span th:text="${magic3}"></span><br>
+    <span th:text="${magic4}"></span><br>
+    <span th:text="${magic5}"></span><br>
+    <span th:text="${magic6}"></span><br>
+    <span th:text="${magic7}"></span>
+</div>
+</body>
+</html>

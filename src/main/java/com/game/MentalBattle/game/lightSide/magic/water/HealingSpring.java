@@ -7,14 +7,14 @@ import org.springframework.stereotype.Component;
 
 @Component("healingSpringBean")
 public class HealingSpring implements MagicSkill {
-    @Value("${priceMeteorRain}")
+    @Value("${priceHealingSpring}")
     private int price;
-    @Value("${descriptionMeteorRain}")
+    @Value("${descriptionHealingSpring}")
     private String description;
     @Value("${damageHealingSpring}")
     private int damage;
     private final Impact impact = Impact.HEAL;
-    @Value("${impactVolumeMeteorRain}")
+    @Value("${impactVolumeHealingSpring}")
     private int impactVolume;
 
     @Override

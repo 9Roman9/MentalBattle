@@ -5,6 +5,9 @@ import com.game.MentalBattle.game.lightSide.magic.MagicSkill;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
+
 @Component("flamingWhipBean")
 public class FlamingWhip implements MagicSkill {
     @Value("${priceFlamingWhip}")
@@ -23,7 +26,9 @@ public class FlamingWhip implements MagicSkill {
     }
 
     @Override
-    public String getDescription() { return description; }
+    public String getDescription(){
+        return description;
+    }
 
     @Override
     public Impact getImpact() {

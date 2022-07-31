@@ -9,6 +9,8 @@ public class ProtectiveShield implements Cloth{
     private int price;
     @Value("${protectionValueProtectiveShield}")
     private int protectionValue;
+    @Value("${descriptionProtectiveShield}")
+    private String description;
 
     @Override
     public int getPrice() {
@@ -18,5 +20,10 @@ public class ProtectiveShield implements Cloth{
     @Override
     public int getProtectionValue() {
         return protectionValue;
+    }
+
+    @Override
+    public String getDescription() {
+        return description;
     }
 }

@@ -9,6 +9,8 @@ public class RomeMail implements Cloth{
     private int price;
     @Value("${protectionValueRomeMail}")
     private int protectionValue;
+    @Value("${descriptionRomeMail}")
+    private String description;
 
     @Override
     public int getPrice() {
@@ -18,5 +20,10 @@ public class RomeMail implements Cloth{
     @Override
     public int getProtectionValue() {
         return protectionValue;
+    }
+
+    @Override
+    public String getDescription() {
+        return description;
     }
 }

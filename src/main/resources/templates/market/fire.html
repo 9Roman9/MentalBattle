@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/static/style.css" th:href="@{/style.css}">
+    <title>MentalBattle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="text">- Вогонь - це надзвичайно потужна стихія. Той, хто вміє керувати вогнем, стає грізним воїном.<br><br>
+    У мене є такі амулети вогню:<br><br>
+    <span>Метеоритний дощ</span> - влаштує справжнє пекло на землі. Здатний завдати ураження до <span th:text="${damageMeteorRain}"></span> од.
+    Після потрапляння метеориту у ворога, ворог спалахує, що додатково завдає ураження у розмірі <span th:text="${impactVolumeMeteorRain}"></span> од.
+    Щоправда, коштує він <span th:text="${priceMeteorRain}"></span> песо.<br><br>
+    <span>Подих дракона</span> - цей амулет дозволяє спрямувати у ворога потік полум'я, що підсмажить його не на жарт, забираючи в нього здоров'я до <span th:text="${damageDragonBreath}"></span> од.
+    Після вичерпання магії ворог спалахує, що дозволяє додатково завдати ураження на <span th:text="${impactVolumeDragonBreath}"></span> од.
+    Його ціна - <span th:text="${priceDragonBreath}"></span> песо.<br><br>
+    <span>Палаючий батіг</span> - мабуть, рабовласники б оцінили цей амулет краще всіх. Завдає шкоди до <span th:text="${damageFlamingWhip}"></span> од.
+    Після потрапляння на ворога, на його тілі лишаються тліючі рани, що робить майбутні удари зброєю ще болючішими. Збільшує силу звичайної зброї до <span th:text="${impactVolumeDragonBreath}"></span>% на 3 ходи.
+    Ти його зможеш забрати за <span th:text="${priceFlamingWhip}"></span> песо.<br><br>
+</div>
+<div class="image"> <img id="img" src="/img/Fire.JPEG"> </div>
+<div class="output">
+    <form th:action="makePurchase" method="post">
+        <button name="name" value="meteorRain"><span class="spanButton" th:text="${descriptionMeteorRain}"></span></button>
+    </form><br>
+    <form th:action="makePurchase" method="post">
+        <button name="name" value="dragonBreath"><span class="spanButton" th:text="${descriptionDragonBreath}"></span></button>
+    </form><br>
+    <form th:action="makePurchase" method="post">
+        <button name="name" value="flamingWhip"><span class="spanButton" th:text="${descriptionFlamingWhip}"></span></button>
+    </form><br>
+    <a href="magic">Назад</a>
+</div>
+<div class="indicators">
+    <p>Песо: <span th:text="${money}"></span></p><br>
+    <p>Магічні амулети:</p>
+    <span th:text="${magic1}"></span><br>
+    <span th:text="${magic2}"></span><br>
+    <span th:text="${magic3}"></span><br>
+    <span th:text="${magic4}"></span><br>
+    <span th:text="${magic5}"></span><br>
+    <span th:text="${magic6}"></span><br>
+    <span th:text="${magic7}"></span>
+</div>
+</body>
+</html>

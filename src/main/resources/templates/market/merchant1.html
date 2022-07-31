@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/static/style.css" th:href="@{/style.css}">
+    <title>MentalBattle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="text">- Салям! Підходь, не соромся!<br><br>
+    Бажаєш гарний килим? У мене ти знайдеш килими на будь-який смак.
+Як хочеш прикрасити свою оселю чимось незвичайним, бери цей гобелен з вирізьбленим драконом. Такого ти ніде тут не знайдеш!<br><br>
+Чи може тобі до вподоби щось більш екзотичне? Я приберіг кілька справжніх перських килимів. За них і по горлянці шкварнути можуть...</div>
+<div class="image"> <img id="img" src="/img/Merchant.JPEG"> </div>
+<div class="output">
+    <a href="merchant2">- Хоель сказав, що ти можеш допомогти з чаклуном.</a>
+</div>
+<div class="indicators">
+    <p>Песо: <span th:text="${money}"></span></p>
+</div>
+</body>
+</html>

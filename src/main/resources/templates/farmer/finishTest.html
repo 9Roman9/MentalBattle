@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/static/style.css" th:href="@{/style.css}">
+    <title>MentalBattle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="text">- Мда, аміго, мій новонароджений син і то краще за тебе в математиці шарить. Тримай <span th:text="${money}"></span> песо.<br><br>
+    Якщо наважишся на ці копійки сунутися до чаклуна, завітай спершу на наш ринок, і спитай там Болга. Скажеш, що ти від Хоеля. Може він і знайде щось для тебе.</div>
+<div class="image"> <img id="img" src="/img/Farmer.JPEG"> </div>
+<div class="output">
+    <a href="market">- Дякую, чоловіче! Чекай на мене з гарними новинами!</a>
+</div>
+<div class="indicators">
+    <p>Правильні відповіді: <span th:text="${correctAnswers}"></span></p>
+    <p>Неправильні відповіді: <span th:text="${wrongAnswers}"></span></p>
+    <p>Песо: <span th:text="${money}"></span></p>
+</div>
+</body>
+</html>

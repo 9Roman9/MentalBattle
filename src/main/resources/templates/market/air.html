@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/static/style.css" th:href="@{/style.css}">
+    <title>MentalBattle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="text">- Повітря - містична стихія, яка асоціюється з духами. Не хотів би я зіштовхнутися в бою з адептами магії повітря. Можу запропонувати тобі наступні амулети:<br><br>
+    <span>Торнадо</span> - на ворога налітає величезний вихор, що здіймає його високо вгору, завдаючи при цьому шкоди до <span th:text="${damageTornado}"></span> од.
+    В результаті падіння ворог отримає додаткове ураження у розмірі <span th:text="${impactVolumeTornado}"></span> од.
+    З цим амулетом я готовий розпрощатися лише за <span th:text="${priceTornado}"></span> песо.<br><br>
+    <span>Містичний туман</span> - а от і духи підійшли. Оповиваючи тебе млою, вони відновлюють твоє здоров'я на <span th:text="${impactVolumeMysticFog}"></span> од. Щоправда, ворогу буде завдано шкоди до <span th:text="${damageMysticFog}"></span> од.
+    За таку річ тобі доведеться віддати <span th:text="${priceMysticFog}"></span> песо.<br><br>
+    <span>Пекучий вітер</span> - на ворога налітає пилова буря, яка завдає йому шкоди до <span th:text="${damageBurningWind}"></span> од.
+    Після потрапляння в очі ворогу, він стає дещо дезорієнтованим протягом наступних трьох ходів, що дозволяє зменшити силу його ударів на <span th:text="${impactVolumeBurningWind}"></span>%.
+    Я візьму за нього <span th:text="${priceBurningWind}"></span> песо.<br><br>
+</div>
+<div class="image"> <img id="img" src="/img/Air.JPEG"> </div>
+<div class="output">
+    <form th:action="makePurchase" method="post">
+        <button name="name" value="tornado"><span class="spanButton" th:text="${descriptionTornado}"></span></button>
+    </form><br>
+    <form th:action="makePurchase" method="post">
+        <button name="name" value="mysticFog"><span class="spanButton" th:text="${descriptionMysticFog}"></span></button>
+    </form><br>
+    <form th:action="makePurchase" method="post">
+        <button name="name" value="burningWind"><span class="spanButton" th:text="${descriptionBurningWind}"></span></button>
+    </form><br>
+    <a href="magic">Назад</a>
+</div>
+<div class="indicators">
+    <p>Песо: <span th:text="${money}"></span></p><br>
+    <p>Магічні амулети:</p>
+    <span th:text="${magic1}"></span><br>
+    <span th:text="${magic2}"></span><br>
+    <span th:text="${magic3}"></span><br>
+    <span th:text="${magic4}"></span><br>
+    <span th:text="${magic5}"></span><br>
+    <span th:text="${magic6}"></span><br>
+    <span th:text="${magic7}"></span>
+</div>
+</body>
+</html>

@@ -11,7 +11,9 @@ public class Katana implements Weapon {
     private int price;
     @Value("${damageKatana}")
     private int damage;
-    private final Impact impact = Impact.ATTACK_PLUS;
+    @Value("${descriptionKatana}")
+    private String description;
+    private final Impact impact = Impact.DAMAGE;
 
     @Override
     public int getPrice() {
@@ -26,5 +28,10 @@ public class Katana implements Weapon {
     @Override
     public Impact getImpact() {
         return impact;
+    }
+
+    @Override
+    public String getDescription() {
+        return description;
     }
 }

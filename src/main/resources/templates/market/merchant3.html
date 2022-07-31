@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/static/style.css" th:href="@{/style.css}">
+    <title>MentalBattle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="text">Зайшовши до шатра, перше, що ти відчуваєш, це міцний запах алкоголю. З вигляду невелике шатро здається суттєво більше своїх розмірів зсередини.<br><br>
+    Довкола лежать розкидані речі, що й пройти складно. Потім ти помічаєш непритомне тіло на ліжку.<br><br>
+    - Не звертай уваги, то мій батько. Наклюкався, як востаннє, то його тепер і канонадою не розштурхаєш.<br><br>
+    Привітне лице торговця в шатрі вмить стало серйозним:<br><br>
+    - То кажеш чаклун? Хм... Темний тип, краще до нього не сунутися. Але як так хочеш, то можу допомогти... Але це буде не дешево, - додав Болг, єхидно посміхаючись.</div>
+<div class="image"> <img id="img" src="/img/Tent.JPEG"> </div>
+<div class="output">
+    <a href="products">- Не зволікай. Показуй вже, що маєш.</a>
+</div>
+<div class="indicators">
+    <p>Песо: <span th:text="${money}"></span></p>
+</div>
+</body>
+</html>

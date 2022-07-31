@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/static/style.css" th:href="@{/style.css}">
+    <title>MentalBattle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="text">- Луки - ідеальна зброя для любителів бою на дальній дистанції. Всі вони мають властивість збільшувати ймовірність подвійного ушкодження на 20%. В моєму асортименті ти можеш знайти такі луки:<br><br>
+    <span>Дерев'яний лук</span> - звичайний лук, з яким ходили на полювання ще наші предки. Здатний завдати ураження до <span th:text="${damageWoodenBow}"></span> од.
+    Тому й вартість його найменша, а саме <span th:text="${priceWoodenBow}"></span> песо.<br><br>
+    <span>Арбалет</span> - наступне покоління після стандартного лука. Дозволяє краще прицілитися і проникнення стріли глибше. Шкода - до <span th:text="${damageCrossbow}"></span> од.
+    Така зброя коштує <span th:text="${priceCrossbow}"></span> песо.<br><br>
+    <span>Легендарний лук</span> - єдиний у своєму екземплярі. Належав самому Вільгельму Теллю, найкращому швейцарському лучнику всіх часів. Висококласна зброя, здатна завдати шкоди до <span th:text="${damageLegendaryBow}"></span> од.
+    Така коштовність тобі буде вартувати <span th:text="${priceLegendaryBow}"></span> песо.<br><br>
+</div>
+<div class="image"> <img id="img" src="/img/Bow.JPEG"> </div>
+<div class="output">
+    <form th:action="makePurchase" method="post">
+        <button name="name" value="woodenBow"><span class="spanButton" th:text="${descriptionWoodenBow}"></span></button>
+    </form><br>
+    <form th:action="makePurchase" method="post">
+        <button name="name" value="crossbow"><span class="spanButton" th:text="${descriptionCrossbow}"></span></button>
+    </form><br>
+    <form th:action="makePurchase" method="post">
+        <button name="name" value="legendaryBow"><span class="spanButton" th:text="${descriptionLegendaryBow}"></span></button>
+    </form><br>
+    <a href="weapon">Назад</a>
+</div>
+<div class="indicators">
+    <p>Песо: <span th:text="${money}"></span></p><br>
+    <p>Магічні амулети:</p>
+    <span th:text="${magic1}"></span><br>
+    <span th:text="${magic2}"></span><br>
+    <span th:text="${magic3}"></span><br>
+    <span th:text="${magic4}"></span><br>
+    <span th:text="${magic5}"></span><br>
+    <span th:text="${magic6}"></span><br>
+    <span th:text="${magic7}"></span>
+</div>
+</body>
+</html>

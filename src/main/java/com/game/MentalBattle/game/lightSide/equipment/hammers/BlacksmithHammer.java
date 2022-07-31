@@ -11,6 +11,8 @@ public class BlacksmithHammer implements Weapon {
     private int price;
     @Value("${damageBlacksmithHammer}")
     private int damage;
+    @Value("${descriptionBlacksmithHammer}")
+    private String description;
     private final Impact impact = Impact.STUN;
 
     @Override
@@ -26,5 +28,10 @@ public class BlacksmithHammer implements Weapon {
     @Override
     public Impact getImpact() {
         return impact;
+    }
+
+    @Override
+    public String getDescription() {
+        return description;
     }
 }

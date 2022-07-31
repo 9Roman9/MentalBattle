@@ -4,6 +4,7 @@ import com.game.MentalBattle.Config;
 import com.game.MentalBattle.game.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +15,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 @Controller
+@Component
 public class ControllerFarmer {
     @Autowired
     Task task;
@@ -27,20 +29,25 @@ public class ControllerFarmer {
     int money;
     int correctAnswers;
     int wrongAnswers;
+
+    public int getMoney() {
+        return money;
+    }
+
     @GetMapping("/")
     public String farmer1(){
         context = new AnnotationConfigApplicationContext(Config.class);
-        return "farmer1";
+        return "/farmer/farmer1";
     }
 
     @GetMapping("/farmer2")
     public String farmer2(){
-        return "farmer2";
+        return "/farmer/farmer2";
     }
 
     @GetMapping("/farmer3")
     public String farmer3(){
-        return "farmer3";
+        return "/farmer/farmer3";
     }
 
     @GetMapping("/test1")
@@ -55,7 +62,7 @@ public class ControllerFarmer {
         String timeString = "test".concat(String.valueOf(++times));
         model.addAttribute("riddle",riddle);
         model.addAttribute("times",timeString);
-        return "test";
+        return "/farmer/test";
     }
 
     @RequestMapping(value = {"/test2","/test3","/test4","/test5","/test6",
@@ -76,10 +83,9 @@ public class ControllerFarmer {
         model.addAttribute("correctAnswers",correctAnswers);
         model.addAttribute("wrongAnswers",wrongAnswers);
         model.addAttribute("times",timeString);
-        return "test";
+        return "/farmer/test";
     }
 
-//    @GetMapping("/test11")
     @RequestMapping(value = "/test11", method = RequestMethod.POST)
     public String finishTest(Model model, String answer){
         task.fixFinish();
@@ -91,6 +97,6 @@ public class ControllerFarmer {
         model.addAttribute("money",money);
         model.addAttribute("correctAnswers",correctAnswers);
         model.addAttribute("wrongAnswers",wrongAnswers);
-        return "finishTest";
+        return "/farmer/finishTest";
     }
 }

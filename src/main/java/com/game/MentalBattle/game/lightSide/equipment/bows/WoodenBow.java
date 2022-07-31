@@ -11,6 +11,8 @@ public class WoodenBow implements Weapon {
     private int price;
     @Value("${damageWoodenBow}")
     private int damage;
+    @Value("${descriptionWoodenBow}")
+    private String description;
     private final Impact impact = Impact.CRUCIAL;
 
     @Override
@@ -26,5 +28,10 @@ public class WoodenBow implements Weapon {
     @Override
     public Impact getImpact() {
         return impact;
+    }
+
+    @Override
+    public String getDescription() {
+        return description;
     }
 }

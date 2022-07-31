@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/static/style.css" th:href="@{/style.css}">
+    <title>MentalBattle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="text">- Мечі - універсальна зброя для бою на ближній дистанції. Всі вони додатково до основного ураження завдають шкоди на 10 од. До твоєї уваги пропоную такі мечі:<br><br>
+    <span>Стародавній меч</span> - меч, який я знайшов на території колишньої Персії. Бездоганно зберігся до сьогоднішніх днів. Скоротить ворогу життя до <span th:text="${damageAncientSword}"></span> од.
+    Нехай ти його можеш забрати, скажімо, за <span th:text="${priceAncientSword}"></span> песо.<br><br>
+    <span>Кинжал</span> - цього малюка я знайшов біля мертвого асасина. Надзвичайно легкий і може завдати ворогу чимало клопоту. Вражає ворога на <span th:text="${damageDagger}"></span> од.
+    Його ринкова вартість <span th:text="${priceDagger}"></span> песо.<br><br>
+    <span>Катана</span> - цю зброю я тобі раджу придбавати, лише якщо ти з нею вправний. В умілих руках цей самурайський меч вселятиме жах ворогів. Максимальне ураження - <span th:text="${damageKatana}"></span> од.
+    Я готовий розлучитися з нею лише за <span th:text="${priceKatana}"></span> песо.<br><br>
+</div>
+<div class="image"> <img id="img" src="/img/Sword.JPEG"> </div>
+<div class="output">
+    <form th:action="makePurchase" method="post">
+        <button name="name" value="ancientSword"><span class="spanButton" th:text="${descriptionAncientSword}"></span></button>
+    </form><br>
+    <form th:action="makePurchase" method="post">
+        <button name="name" value="dagger"><span class="spanButton" th:text="${descriptionDagger}"></span></button>
+    </form><br>
+    <form th:action="makePurchase" method="post">
+        <button name="name" value="katana"><span class="spanButton" th:text="${descriptionKatana}"></span></button>
+    </form><br>
+    <a href="weapon">Назад</a>
+</div>
+<div class="indicators">
+    <p>Песо: <span th:text="${money}"></span></p><br>
+    <p>Магічні амулети:</p>
+    <span th:text="${magic1}"></span><br>
+    <span th:text="${magic2}"></span><br>
+    <span th:text="${magic3}"></span><br>
+    <span th:text="${magic4}"></span><br>
+    <span th:text="${magic5}"></span><br>
+    <span th:text="${magic6}"></span><br>
+    <span th:text="${magic7}"></span>
+</div>
+</body>
+</html>

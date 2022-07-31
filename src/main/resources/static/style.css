@@ -110,3 +110,15 @@ a:hover {
 span{
     color: #f1d17f;
 }
+
+button {
+     background:none!important;
+     border:none;
+     padding:0!important;
+     font: inherit;
+     cursor: pointer;
+}
+
+.spanButton:hover {
+     color: #a4771e;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/static/style.css" th:href="@{/style.css}">
+    <title>MentalBattle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="text">- Чудово! Але одразу попереджаю, що магічні амулети не можна використовувати постійно. А саме строк перезарядки одного амулету складає 10 ходів.<br><br>
+    У мене є амулети чотирьох стихій: <span>вогню</span>, <span>води</span>, <span>землі</span> та <span>повітря</span>.<br><br>
+    З якою з них ти хочеш ознайомитися детальніше?</div>
+<div class="image"> <img id="img" src="/img/Magic.JPEG"> </div>
+<div class="output">
+    <a href="fire">Вогонь</a><br><br>
+    <a href="water">Вода</a><br><br>
+    <a href="earth">Земля</a><br><br>
+    <a href="air">Повітря</a><br><br>
+    <a href="products">Назад</a>
+</div>
+<div class="indicators">
+    <p>Песо: <span th:text="${money}"></span></p><br>
+    <p>Магічні амулети:</p>
+    <span th:text="${magic1}"></span><br>
+    <span th:text="${magic2}"></span><br>
+    <span th:text="${magic3}"></span><br>
+    <span th:text="${magic4}"></span><br>
+    <span th:text="${magic5}"></span><br>
+    <span th:text="${magic6}"></span><br>
+    <span th:text="${magic7}"></span>
+</div>
+</body>
+</html>

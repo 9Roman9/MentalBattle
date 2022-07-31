@@ -11,7 +11,9 @@ public class AncientSword implements Weapon {
     private int price;
     @Value("${damageAncientSword}")
     private int damage;
-    private final Impact impact = Impact.ATTACK_PLUS;
+    @Value("${descriptionAncientSword}")
+    private String description;
+    private final Impact impact = Impact.DAMAGE;
 
     @Override
     public int getPrice() {
@@ -26,5 +28,10 @@ public class AncientSword implements Weapon {
     @Override
     public Impact getImpact() {
         return impact;
+    }
+
+    @Override
+    public String getDescription() {
+        return description;
     }
 }

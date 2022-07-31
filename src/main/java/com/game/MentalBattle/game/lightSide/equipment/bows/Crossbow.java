@@ -11,6 +11,8 @@ public class Crossbow implements Weapon {
     private int price;
     @Value("${damageCrossbow}")
     private int damage;
+    @Value("${descriptionCrossbow}")
+    private String description;
     private final Impact impact = Impact.CRUCIAL;
 
     @Override
@@ -26,5 +28,10 @@ public class Crossbow implements Weapon {
     @Override
     public Impact getImpact() {
         return impact;
+    }
+
+    @Override
+    public String getDescription() {
+        return description;
     }
 }

@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/static/style.css" th:href="@{/style.css}">
+    <title>MentalBattle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="text">- Що ж, тоді я бажаю тобі успіхів у битві з Чаклуном.<br><br>
+    Він живе на горі Утапау, яка розташована на Сході від міста. Її навіть звідси видно.
+</div>
+<div class="image"> <img id="img" src="/img/Merchant.JPEG"> </div>
+<div class="output">
+    <a href="nearMountain">Дякую за допомогу, Болгу!</a>
+</div>
+<div class="indicators">
+    <p>Магічні амулети:</p>
+    <span th:text="${magic1}"></span><br>
+    <span th:text="${magic2}"></span><br>
+    <span th:text="${magic3}"></span><br>
+    <span th:text="${magic4}"></span><br>
+    <span th:text="${magic5}"></span><br>
+    <span th:text="${magic6}"></span><br>
+    <span th:text="${magic7}"></span>
+</div>
+</body>
+</html>

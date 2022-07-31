@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/static/style.css" th:href="@{/style.css}">
+    <title>MentalBattle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="text">- Молоти - це зброя для справжніх силачів. Екземпляри цієї категорії збільшують ймовірність приголомшення ворога на 20%. Перед собою ти можеш побачити такі молоти:<br><br>
+    <span>Ковальський молот</span> - старий добрий молот. Ніяких понтів, але надійність перевірена часом. Позбавить ворога <span th:text="${damageBlacksmithHammer}"></span> од. життя.
+    Він твій за <span th:text="${priceBlacksmithHammer}"></span> песо.<br><br>
+    <span>Булава</span> - цей екземпляр буде посерйозніше за попередній. За рахунок ваги й шипів вражає ворога на <span th:text="${damageMace}"></span> од.
+    Ти можеш його забрати за <span th:text="${priceMace}"></span> песо.<br><br>
+    <span>Молот Грому</span> - цією іграшкою ще боги гралися. Але якщо для них це лише іграшка, то для нас це грізна зброя, яка здатна перетворити камінь на попіл. Здатний завдати шкоди до <span th:text="${damageThunderHammer}"></span> од.
+    Продам за <span th:text="${priceThunderHammer}"></span> песо.<br><br>
+</div>
+<div class="image"> <img id="img" src="/img/Hammer.JPEG"> </div>
+<div class="output">
+    <form th:action="makePurchase" method="post">
+        <button name="name" value="blacksmithHammer"><span class="spanButton" th:text="${descriptionBlacksmithHammer}"></span></button>
+    </form><br>
+    <form th:action="makePurchase" method="post">
+        <button name="name" value="mace"><span class="spanButton" th:text="${descriptionMace}"></span></button>
+    </form><br>
+    <form th:action="makePurchase" method="post">
+        <button name="name" value="thunderHammer"><span class="spanButton" th:text="${descriptionThunderHammer}"></span></button>
+    </form><br>
+    <a href="weapon">Назад</a>
+</div>
+<div class="indicators">
+    <p>Песо: <span th:text="${money}"></span></p><br>
+    <p>Магічні амулети:</p>
+    <span th:text="${magic1}"></span><br>
+    <span th:text="${magic2}"></span><br>
+    <span th:text="${magic3}"></span><br>
+    <span th:text="${magic4}"></span><br>
+    <span th:text="${magic5}"></span><br>
+    <span th:text="${magic6}"></span><br>
+    <span th:text="${magic7}"></span>
+</div>
+</body>
+</html>
