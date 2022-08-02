@@ -30,6 +30,7 @@ import com.game.MentalBattle.game.lightSide.magic.water.HealingSpring;
 import com.game.MentalBattle.game.lightSide.magic.water.IceSpike;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,6 +41,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
+@Component("controllerMarketBean")
 public class ControllerMarket {
     AnnotationConfigApplicationContext context;
     @Autowired
@@ -690,5 +692,26 @@ public class ControllerMarket {
         }
         model.addAttribute("money",money);
         return "/market/notEnoughMoney";
+    }
+
+    public List<MagicSkill> getPurchasedMagic(){
+        return purchasedMagic;
+    }
+    public List<Weapon> getPurchasedWeapon(){
+        return purchasedWeapon;
+    }
+
+    public List<Cloth> getPurchasedCloth(){
+        return purchasedCloth;
+    }
+
+    @GetMapping("/cheat")
+    public String Cheat(Model model){
+        for (int i = 0; i < purchasedMagic.size(); i++){
+            model.addAttribute("magic".concat(String.valueOf(i+1)),purchasedMagic.get(i).getDescription());
+        }
+        money = 1500;
+        model.addAttribute("money",money);
+        return "/market/products";
     }
 }

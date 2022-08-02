@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/static/style.css" th:href="@{/style.css}">
+    <title>MentalBattle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="text">
+    - Ах-ах-ах-ах! Яка ж кумедна ця людинка... Ти справді думаєш, що можеш здолати мене?
+    Та я бачу, що ти не з пустими руками прийшов, а як слід приготувався. Ну що ж, це буде цікава розвага.
+    За твою безглузду хоробрість я тобі дам можливість першим завдати удару.<br><br>
+    "Ну що ж, почалося" - майнуло в твоїй голові...
+</div>
+<div class="image"> <img id="img" src="/img/Wizard.JPEG"> </div>
+<div class="output">
+    <a href="stepLight">Почати бій</a>
+</div>
+<div class="indicators">
+    <p>Магічні амулети:</p>
+    <span th:text="${magic1}"></span><br>
+    <span th:text="${magic2}"></span><br>
+    <span th:text="${magic3}"></span><br>
+    <span th:text="${magic4}"></span><br>
+    <span th:text="${magic5}"></span><br>
+    <span th:text="${magic6}"></span><br>
+    <span th:text="${magic7}"></span>
+</div>
+</body>
+</html>

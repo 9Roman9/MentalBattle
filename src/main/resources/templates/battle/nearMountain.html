@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/static/style.css" th:href="@{/style.css}">
+    <title>MentalBattle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="text">
+    Прямуючи цілий день до гори, під вечір ти нарешті опиняєшся біля її підніжжя.<br><br>
+    Від самої гори так і віє моторошністю. Ще на підході до неї було помітно, як поступово все менше і менше тварин тобі трапляється на шляху.
+    Тут же навіть небо заволокло чорною непроглядною млою. А навкруги ні рослинки, лише каміння.<br><br>
+    Що ж, схоже цей Чаклун справді породження зла...
+</div>
+<div class="image"> <img id="img" src="/img/Mountain.JPEG"> </div>
+<div class="output">
+    <a href="topMountain1">Піднятися на гору</a>
+</div>
+<div class="indicators">
+    <p>Магічні амулети:</p>
+    <span th:text="${magic1}"></span><br>
+    <span th:text="${magic2}"></span><br>
+    <span th:text="${magic3}"></span><br>
+    <span th:text="${magic4}"></span><br>
+    <span th:text="${magic5}"></span><br>
+    <span th:text="${magic6}"></span><br>
+    <span th:text="${magic7}"></span>
+</div>
+</body>
+</html>

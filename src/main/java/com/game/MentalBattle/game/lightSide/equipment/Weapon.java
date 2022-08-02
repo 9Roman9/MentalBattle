@@ -7,4 +7,6 @@ public interface Weapon {
     int getDamage();
     Impact getImpact();
     String getDescription();
+    String getDescriptionEng();
+    int getRealDamage();
 }

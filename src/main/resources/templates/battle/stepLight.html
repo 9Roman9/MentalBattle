@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/static/style.css" th:href="@{/style.css}">
+    <title>MentalBattle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="text">
+    Що ти обереш для нанесення удару?<br><br><br><br>
+    Підказка:<br><br>
+    <p><span th:text="${magicName1}"></span> <span class="white" th:text="${magicHint1}"></span></p><br>
+    <p><span th:text="${magicName2}"></span> </span> <span class="white" th:text="${magicHint2}"></span></p><br>
+    <p><span th:text="${magicName3}"></span> <span class="white" th:text="${magicHint3}"></span></p><br>
+    <p><span th:text="${magicName4}"></span> <span class="white" th:text="${magicHint4}"></span></p><br>
+    <p><span th:text="${magicName5}"></span> <span class="white" th:text="${magicHint5}"></span></p><br>
+    <p><span th:text="${magicName6}"></span> <span class="white" th:text="${magicHint6}"></span></p><br>
+    <p><span th:text="${magicName7}"></span> <span class="white" th:text="${magicHint7}"></span></p><br>
+
+</div>
+<div class="image"> <img id="img" src="/img/Wizard.JPEG"> </div>
+<div class="output">
+    <a th:href="${nextDarkSkill}">Пропустити хід</a><br><br>
+    <a th:href="${weaponRef}"><span class="spanButton" th:text="${weapon}"></span></a><br><br>
+    <a th:href="${magicRef1}"><span class="spanButton" th:text="${magicName1}"></span></a><br><br>
+    <a th:href="${magicRef2}"><span class="spanButton" th:text="${magicName2}"></span></a><br><br>
+    <a th:href="${magicRef3}"><span class="spanButton" th:text="${magicName3}"></span></a><br><br>
+    <a th:href="${magicRef4}"><span class="spanButton" th:text="${magicName4}"></span></a><br><br>
+    <a th:href="${magicRef5}"><span class="spanButton" th:text="${magicName5}"></span></a><br><br>
+    <a th:href="${magicRef6}"><span class="spanButton" th:text="${magicName6}"></span></a><br><br>
+    <a th:href="${magicRef7}"><span class="spanButton" th:text="${magicName7}"></span></a>
+</div>
+<div class="indicators">
+    <p>Твій рівень життя: <span th:text="${heroLife}"></span></p>
+    <p>Рівень життя Чаклуна: <span th:text="${wizardLife}"></span></p><br>
+    <p>Час до перезаряджання:</p>
+    <p><span th:text="${magic1}"></span><span th:text="${magic1Dots}"></span> <span th:text="${magic1Time}"></span></p>
+    <p><span th:text="${magic2}"></span><span th:text="${magic2Dots}"></span> <span th:text="${magic2Time}"></span></p>
+    <p><span th:text="${magic3}"></span><span th:text="${magic3Dots}"></span> <span th:text="${magic3Time}"></span></p>
+    <p><span th:text="${magic4}"></span><span th:text="${magic4Dots}"></span> <span th:text="${magic4Time}"></span></p>
+    <p><span th:text="${magic5}"></span><span th:text="${magic5Dots}"></span> <span th:text="${magic5Time}"></span></p>
+    <p><span th:text="${magic6}"></span><span th:text="${magic6Dots}"></span> <span th:text="${magic6Time}"></span></p>
+    <p><span th:text="${magic7}"></span><span th:text="${magic7Dots}"></span> <span th:text="${magic7Time}"></span></p><br>
+    <p>Магічні ефекти:</p>
+    <p>Шанс завдати зброєю критичний удар: <span th:text="${crucialEffect}"></span>%</p>
+    <p>Шанс приголомшити ворога: <span th:text="${stunEffect}"></span>%</p>
+    <p>Збільшено захист на: <span th:text="${equipmentProtection}"></span> од. + <span th:text="${defenceEffect}"></span>%</p>
+    <p>Збільшено атаку на: <span th:text="${increaseAttackEffect}"></span>%</p>
+    <p>Зменшено атаку ворога на: <span th:text="${decreaseAttackEffect}"></span>%</p>
+</div>
+</body>
+</html>

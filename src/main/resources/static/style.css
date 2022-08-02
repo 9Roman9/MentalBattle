@@ -84,7 +84,7 @@ img {
 
 .output {
     width: 55%;
-    height: 40%;
+    height: 45%;
     bottom: 0px;
     left: 0px;
     margin: 0px 0px 10px 10px;
@@ -92,8 +92,8 @@ img {
 
 .indicators {
     width: 30%;
-    height: 30%;
-    bottom: 30px;
+    height: 45%;
+    bottom: -10px;
     right: 35px;
     margin: 20px 20px 20px 20px;
     padding: 1px 1px 1px 1px;
@@ -121,4 +121,8 @@ button {
 
 .spanButton:hover {
      color: #a4771e;
+}
+
+.white {
+    color: #FFFFFF;
 }

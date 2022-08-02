@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/static/style.css" th:href="@{/style.css}">
+    <title>MentalBattle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="text">
+    Ледве піднімаючись і задихаючись, ти піднімаєшся на гору. Ти майже біля вершини, коли прямо перед тобою з'являється тінь, яка швидко матеріалізується у високу постать. З-під капюшона ти можеш помітити лише похмурі очі, неприродно блідого кольору. Від цієї постаті у тебе похололо все в жилах, а ноги почали по-зрадницьки трястися, видаючи твій дикий переляк.<br><br>
+    - Вітаю у себе вдома! Завжди радий приймати в себе гостей, - мовив Чаклун, тільки в його голосі й нотки радості не вловити, - З якою ж ціллю ти тут?
+</div>
+<div class="image"> <img id="img" src="/img/Wizard.JPEG"> </div>
+<div class="output">
+    <a href="topMountain2">Хочу позбавити світ від такого лиходія, як ти!</a>
+</div>
+<div class="indicators">
+    <p>Магічні амулети:</p>
+    <span th:text="${magic1}"></span><br>
+    <span th:text="${magic2}"></span><br>
+    <span th:text="${magic3}"></span><br>
+    <span th:text="${magic4}"></span><br>
+    <span th:text="${magic5}"></span><br>
+    <span th:text="${magic6}"></span><br>
+    <span th:text="${magic7}"></span>
+</div>
+</body>
+</html>

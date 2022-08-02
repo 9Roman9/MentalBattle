@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/static/style.css" th:href="@{/style.css}">
+    <title>MentalBattle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="text">
+    Подивимося, як Чаклун справиться з твоїми ліанами.<br><br>
+    З твоїх рук починає ринути потік листя, яке в шаленому танці формується в колючі ліани. Різким порухом руки ти спрямовуєш їх у бік Чаклуна.<br><br>
+    <span th:text="${invisibility}"></span><br><br>
+    Тобі вдалося завдати шкоди Чаклуну на <span th:text="${damage}"></span> од. Крім того, наступні удари по отруєним ділянкам тіла Чаклуна на <span th:text="${impactValueVolume}"></span>% підвищують шанс критичного удару.
+</div>
+<div class="image"> <img id="img" src="/img/Liana.JPEG"> </div>
+<div class="output">
+    <a th:href="${nextDarkSkill}">Далі</a>
+</div>
+<div class="indicators">
+    <p>Твій рівень життя: <span th:text="${heroLife}"></span></p>
+    <p>Рівень життя Чаклуна: <span th:text="${wizardLife}"></span></p><br>
+    <p>Час до перезаряджання:</p>
+    <p><span th:text="${magic1}"></span><span th:text="${magic1Dots}"></span> <span th:text="${magic1Time}"></span></p>
+    <p><span th:text="${magic2}"></span><span th:text="${magic2Dots}"></span> <span th:text="${magic2Time}"></span></p>
+    <p><span th:text="${magic3}"></span><span th:text="${magic3Dots}"></span> <span th:text="${magic3Time}"></span></p>
+    <p><span th:text="${magic4}"></span><span th:text="${magic4Dots}"></span> <span th:text="${magic4Time}"></span></p>
+    <p><span th:text="${magic5}"></span><span th:text="${magic5Dots}"></span> <span th:text="${magic5Time}"></span></p>
+    <p><span th:text="${magic6}"></span><span th:text="${magic6Dots}"></span> <span th:text="${magic6Time}"></span></p>
+    <p><span th:text="${magic7}"></span><span th:text="${magic7Dots}"></span> <span th:text="${magic7Time}"></span></p><br>
+    <p>Магічні ефекти:</p>
+    <p>Шанс завдати зброєю критичний удар: <span th:text="${crucialEffect}"></span>%</p>
+    <p>Шанс приголомшити ворога: <span th:text="${stunEffect}"></span>%</p>
+    <p>Збільшено захист на: <span th:text="${equipmentProtection}"></span> од. + <span th:text="${defenceEffect}"></span>%</p>
+    <p>Збільшено атаку на: <span th:text="${increaseAttackEffect}"></span>%</p>
+    <p>Зменшено атаку ворога на: <span th:text="${decreaseAttackEffect}"></span>%</p>
+</div>
+</body>
+</html>

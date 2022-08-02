@@ -15,7 +15,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 @Controller
-@Component
+@Component("controllerFarmerBean")
 public class ControllerFarmer {
     @Autowired
     Task task;
@@ -70,7 +70,11 @@ public class ControllerFarmer {
     public String test(Model model, String answer){
         task.fixFinish();
         this.answer = answerIterator.next();
-        task.calculateScore(this.answer,Integer.parseInt(answer));
+        try {
+            task.calculateScore(this.answer,Integer.parseInt(answer));
+        } catch (Exception e) {
+            task.calculateScore(this.answer,0);
+        }
         task.fixStart();
         readyTask = task.getExample();
         riddleIterator = readyTask.keySet().iterator();
@@ -90,7 +94,11 @@ public class ControllerFarmer {
     public String finishTest(Model model, String answer){
         task.fixFinish();
         this.answer = answerIterator.next();
-        task.calculateScore(this.answer,Integer.parseInt(answer));
+        try {
+            task.calculateScore(this.answer,Integer.parseInt(answer));
+        } catch (Exception e) {
+            task.calculateScore(this.answer,0);
+        }
         money = task.getMoney();
         correctAnswers = task.getCorrectAnswers();
         wrongAnswers = task.getWrongAnswers();

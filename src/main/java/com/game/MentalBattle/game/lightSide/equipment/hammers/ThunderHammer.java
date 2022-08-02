@@ -5,6 +5,8 @@ import com.game.MentalBattle.game.lightSide.equipment.Weapon;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import java.util.Random;
+
 @Component("thunderHammerBean")
 public class ThunderHammer implements Weapon {
     @Value("${priceThunderHammer}")
@@ -13,6 +15,8 @@ public class ThunderHammer implements Weapon {
     private int damage;
     @Value("${descriptionThunderHammer}")
     private String description;
+    @Value("${descriptionEngThunderHammer}")
+    private String descriptionEng;
     private final Impact impact = Impact.STUN;
 
     @Override
@@ -33,5 +37,16 @@ public class ThunderHammer implements Weapon {
     @Override
     public String getDescription() {
         return description;
+    }
+
+    @Override
+    public String getDescriptionEng() {
+        return descriptionEng;
+    }
+
+    @Override
+    public int getRealDamage() {
+        int deviation = new Random().nextInt(damage/10+1);
+        return damage - deviation;
     }
 }

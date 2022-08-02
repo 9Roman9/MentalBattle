@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
+import java.util.Random;
 
 @Component("flamingWhipBean")
 public class FlamingWhip implements MagicSkill {
@@ -14,11 +15,15 @@ public class FlamingWhip implements MagicSkill {
     private int price;
     @Value("${descriptionFlamingWhip}")
     private String description;
+    @Value("${descriptionEngFlamingWhip}")
+    private String descriptionEng;
     @Value("${damageFlamingWhip}")
     private int damage;
     private final Impact impact = Impact.ATTACK_PLUS;
     @Value("${impactVolumeFlamingWhip}")
     private int impactVolume;
+    @Value("${recharge}")
+    private int recharge;
 
     @Override
     public int getPrice() {
@@ -41,5 +46,26 @@ public class FlamingWhip implements MagicSkill {
     @Override
     public int getDamage() {
         return damage;
+    }
+
+    @Override
+    public String getDescriptionEng() {
+        return descriptionEng;
+    }
+
+    @Override
+    public int getRecharge() {
+        return recharge;
+    }
+
+    @Override
+    public int calculateRealDamage(){
+        int deviation = new Random().nextInt(damage/10);
+        return damage - deviation;
+    }
+
+    @Override
+    public void setRecharge(int recharge) {
+        this.recharge = recharge;
     }
 }

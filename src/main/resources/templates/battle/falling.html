@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/static/style.css" th:href="@{/style.css}">
+    <title>MentalBattle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="text">
+    Простягаючи руки до небес Чаклун нашіптує закляття... Ти відчуваєш, як стрімко посилюється вітер, і невдовзі перед чаклуном майорить вихор.<br><br>
+    Немов за вказівкою Чаклуна вихор несеться на тебе. Ти відчуваєш, як він тебе охоплює і підіймає договори. Після погляду вниз тобі стає моторошно, адже ти неймовірно боїшся висоти.
+    А потім враз торнадо кудись зникає, і ти з жахом усвідомлюєш, що летиш вниз.<br><br>
+    Здіймаючись на ноги, ти дивуєшся, як це тобі не переломило всі кісточки. Але спина тепер болить жахливо. Схоже, тебе щойно позбавили <span th:text="${damage}"></span> од. здоров'я.
+</div>
+<div class="image"> <img id="img" src="/img/Falling.JPEG"> </div>
+<div class="output">
+    <a href="stepLight">Далі</a>
+</div>
+<div class="indicators">
+    <p>Твій рівень життя: <span th:text="${heroLife}"></span></p>
+    <p>Рівень життя Чаклуна: <span th:text="${wizardLife}"></span></p><br>
+    <p>Час до перезаряджання:</p>
+    <p><span th:text="${magic1}"></span><span th:text="${magic1Dots}"></span> <span th:text="${magic1Time}"></span></p>
+    <p><span th:text="${magic2}"></span><span th:text="${magic2Dots}"></span> <span th:text="${magic2Time}"></span></p>
+    <p><span th:text="${magic3}"></span><span th:text="${magic3Dots}"></span> <span th:text="${magic3Time}"></span></p>
+    <p><span th:text="${magic4}"></span><span th:text="${magic4Dots}"></span> <span th:text="${magic4Time}"></span></p>
+    <p><span th:text="${magic5}"></span><span th:text="${magic5Dots}"></span> <span th:text="${magic5Time}"></span></p>
+    <p><span th:text="${magic6}"></span><span th:text="${magic6Dots}"></span> <span th:text="${magic6Time}"></span></p>
+    <p><span th:text="${magic7}"></span><span th:text="${magic7Dots}"></span> <span th:text="${magic7Time}"></span></p><br>
+    <p>Магічні ефекти:</p>
+    <p>Шанс завдати зброєю критичний удар: <span th:text="${crucialEffect}"></span>%</p>
+    <p>Шанс приголомшити ворога: <span th:text="${stunEffect}"></span>%</p>
+    <p>Збільшено захист на: <span th:text="${equipmentProtection}"></span> од. + <span th:text="${defenceEffect}"></span>%</p>
+    <p>Збільшено атаку на: <span th:text="${increaseAttackEffect}"></span>%</p>
+    <p>Зменшено атаку ворога на: <span th:text="${decreaseAttackEffect}"></span>%</p>
+</div>
+</body>
+</html>

@@ -5,6 +5,8 @@ import com.game.MentalBattle.game.lightSide.equipment.Weapon;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import java.util.Random;
+
 @Component("ancientSwordBean")
 public class AncientSword implements Weapon {
     @Value("${priceAncientSword}")
@@ -13,6 +15,8 @@ public class AncientSword implements Weapon {
     private int damage;
     @Value("${descriptionAncientSword}")
     private String description;
+    @Value("${descriptionEngAncientSword}")
+    private String descriptionEng;
     private final Impact impact = Impact.DAMAGE;
 
     @Override
@@ -33,5 +37,16 @@ public class AncientSword implements Weapon {
     @Override
     public String getDescription() {
         return description;
+    }
+
+    @Override
+    public String getDescriptionEng() {
+        return descriptionEng;
+    }
+
+    @Override
+    public int getRealDamage() {
+        int deviation = new Random().nextInt(damage/10+1);
+        return damage - deviation;
     }
 }
