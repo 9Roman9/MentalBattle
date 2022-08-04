@@ -663,6 +663,7 @@ public class ControllerBattle {
         if (!controllerMarket.getPurchasedCloth().isEmpty())
             damage = damage - cloth.getProtectionValue() - hero.getDefaultDefence();
         else damage -= hero.getDefaultDefence();
+        if (damage<0) damage = 0;
         heroLife -= damage;
         model.addAttribute("damage",damage);
         model.addAttribute("heroLife",heroLife);

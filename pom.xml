@@ -11,6 +11,7 @@
 	<groupId>com.game</groupId>
 	<artifactId>MentalBattle</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>MentalBattle</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -52,5 +53,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
