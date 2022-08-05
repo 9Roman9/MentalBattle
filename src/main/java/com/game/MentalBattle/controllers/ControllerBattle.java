@@ -1,6 +1,7 @@
 package com.game.MentalBattle.controllers;
 
 import com.game.MentalBattle.Config;
+import com.game.MentalBattle.MentalBattleApplication;
 import com.game.MentalBattle.game.darkSide.Wizard;
 import com.game.MentalBattle.game.darkSide.skills.*;
 import com.game.MentalBattle.game.lightSide.Hero;
@@ -84,6 +85,7 @@ public class ControllerBattle {
     private int increaseAttackEffect;
     private int decreaseAttackEffect;
     private boolean skip = false;
+    private MentalBattleApplication mentalBattleApplication;
 
     @GetMapping("/nearMountain")
     public String nearMountain(Model model){
@@ -99,7 +101,7 @@ public class ControllerBattle {
         for (int i = 0; i < magic.size(); i++){
             model.addAttribute("magic".concat(String.valueOf(i+1)),magic.get(i).getDescription());
         }
-        return "/battle/nearMountain";
+        return "battle/nearMountain";
     }
 
     @GetMapping("/topMountain1")
@@ -107,7 +109,7 @@ public class ControllerBattle {
         for (int i = 0; i < magic.size(); i++){
             model.addAttribute("magic".concat(String.valueOf(i+1)),magic.get(i).getDescription());
         }
-        return "/battle/topMountain1";
+        return "battle/topMountain1";
     }
 
     @GetMapping("/topMountain2")
@@ -117,7 +119,7 @@ public class ControllerBattle {
         for (int i = 0; i < magic.size(); i++){
             model.addAttribute("magic".concat(String.valueOf(i+1)),magic.get(i).getDescription());
         }
-        return "/battle/topMountain2";
+        return "battle/topMountain2";
     }
 
     @GetMapping("/stepLight")
@@ -126,7 +128,7 @@ public class ControllerBattle {
         stunEffect = 0;
         defenceEffect = 0;
         increaseAttackEffect = 0;
-        if (heroLife <= 0) return "/battle/lose";
+        if (heroLife <= 0) return "battle/lose";
         updateEffects();
         model.addAttribute("heroLife",heroLife);
         model.addAttribute("wizardLife",wizardLife);
@@ -162,7 +164,6 @@ public class ControllerBattle {
             model.addAttribute("magic".concat(String.valueOf(i+1)).concat("Dots"),":");
             model.addAttribute("magic".concat(String.valueOf(i+1)).concat("Time"),magic.get(i).getRecharge());
         }
-//        updateEffects();
         Iterator<MagicSkill> magicSkillIterator = currentEffects.keySet().iterator();
         while (magicSkillIterator.hasNext()){
             MagicSkill magicSkill = magicSkillIterator.next();
@@ -177,7 +178,7 @@ public class ControllerBattle {
         model.addAttribute("increaseAttackEffect",increaseAttackEffect);
         model.addAttribute("decreaseAttackEffect",decreaseAttackEffect);
         skip = true;
-        return "/battle/stepLight";
+        return "battle/stepLight";
     }
 
     @GetMapping("/bowsAtBattle")
@@ -211,7 +212,7 @@ public class ControllerBattle {
         model.addAttribute("increaseAttackEffect",increaseAttackEffect);
         model.addAttribute("decreaseAttackEffect",decreaseAttackEffect);
         skip = false;
-        return "/battle/bowsAtBattle";
+        return "battle/bowsAtBattle";
     }
 
     @GetMapping("/swordsAtBattle")
@@ -245,7 +246,7 @@ public class ControllerBattle {
         model.addAttribute("increaseAttackEffect",increaseAttackEffect);
         model.addAttribute("decreaseAttackEffect",decreaseAttackEffect);
         skip = false;
-        return "/battle/swordsAtBattle";
+        return "battle/swordsAtBattle";
     }
 
     @GetMapping("/hammersAtBattle")
@@ -281,7 +282,7 @@ public class ControllerBattle {
         model.addAttribute("increaseAttackEffect",increaseAttackEffect);
         model.addAttribute("decreaseAttackEffect",decreaseAttackEffect);
         skip = false;
-        return "/battle/hammersAtBattle";
+        return "battle/hammersAtBattle";
     }
 
     @GetMapping("/meteorRain")
@@ -310,7 +311,7 @@ public class ControllerBattle {
         model.addAttribute("increaseAttackEffect",increaseAttackEffect);
         model.addAttribute("decreaseAttackEffect",decreaseAttackEffect);
         skip = false;
-        return "/battle/meteorRain";
+        return "battle/meteorRain";
     }
 
     @GetMapping("/dragonBreath")
@@ -339,7 +340,7 @@ public class ControllerBattle {
         model.addAttribute("increaseAttackEffect",increaseAttackEffect);
         model.addAttribute("decreaseAttackEffect",decreaseAttackEffect);
         skip = false;
-        return "/battle/dragonBreath";
+        return "battle/dragonBreath";
     }
 
     @GetMapping("/flamingWhip")
@@ -369,7 +370,7 @@ public class ControllerBattle {
         model.addAttribute("increaseAttackEffect",increaseAttackEffect);
         model.addAttribute("decreaseAttackEffect",decreaseAttackEffect);
         skip = false;
-        return "/battle/flamingWhip";
+        return "battle/flamingWhip";
     }
 
     @GetMapping("/flood")
@@ -398,7 +399,7 @@ public class ControllerBattle {
         model.addAttribute("increaseAttackEffect",increaseAttackEffect);
         model.addAttribute("decreaseAttackEffect",decreaseAttackEffect);
         skip = false;
-        return "/battle/flood";
+        return "battle/flood";
     }
 
     @GetMapping("/healingSpring")
@@ -427,7 +428,7 @@ public class ControllerBattle {
         model.addAttribute("increaseAttackEffect",increaseAttackEffect);
         model.addAttribute("decreaseAttackEffect",decreaseAttackEffect);
         skip = false;
-        return "/battle/healingSpring";
+        return "battle/healingSpring";
     }
 
     @GetMapping("/iceSpike")
@@ -457,7 +458,7 @@ public class ControllerBattle {
         model.addAttribute("increaseAttackEffect",increaseAttackEffect);
         model.addAttribute("decreaseAttackEffect",decreaseAttackEffect);
         skip = false;
-        return "/battle/iceSpike";
+        return "battle/iceSpike";
     }
 
     @GetMapping("/earthquake")
@@ -487,7 +488,7 @@ public class ControllerBattle {
         model.addAttribute("increaseAttackEffect",increaseAttackEffect);
         model.addAttribute("decreaseAttackEffect",decreaseAttackEffect);
         skip = false;
-        return "/battle/earthquake";
+        return "battle/earthquake";
     }
 
     @GetMapping("/leafProtection")
@@ -517,7 +518,7 @@ public class ControllerBattle {
         model.addAttribute("increaseAttackEffect",increaseAttackEffect);
         model.addAttribute("decreaseAttackEffect",decreaseAttackEffect);
         skip = false;
-        return "/battle/leafProtection";
+        return "battle/leafProtection";
     }
 
     @GetMapping("/liana")
@@ -547,7 +548,7 @@ public class ControllerBattle {
         model.addAttribute("increaseAttackEffect",increaseAttackEffect);
         model.addAttribute("decreaseAttackEffect",decreaseAttackEffect);
         skip = false;
-        return "/battle/liana";
+        return "battle/liana";
     }
 
     @GetMapping("/tornado")
@@ -576,7 +577,7 @@ public class ControllerBattle {
         model.addAttribute("increaseAttackEffect",increaseAttackEffect);
         model.addAttribute("decreaseAttackEffect",decreaseAttackEffect);
         skip = false;
-        return "/battle/tornado";
+        return "battle/tornado";
     }
 
     @GetMapping("/mysticFog")
@@ -605,7 +606,7 @@ public class ControllerBattle {
         model.addAttribute("increaseAttackEffect",increaseAttackEffect);
         model.addAttribute("decreaseAttackEffect",decreaseAttackEffect);
         skip = false;
-        return "/battle/mysticFog";
+        return "battle/mysticFog";
     }
 
     @GetMapping("/burningWind")
@@ -635,14 +636,14 @@ public class ControllerBattle {
         model.addAttribute("increaseAttackEffect",increaseAttackEffect);
         model.addAttribute("decreaseAttackEffect",decreaseAttackEffect);
         skip = false;
-        return "/battle/burningWind";
+        return "battle/burningWind";
     }
 
     @GetMapping("/shot")
     public String shot(Model model){
         decreaseAttackEffect = 0;
         defenceEffect = 0;
-        if (wizardLife <= 0) return "/battle/win";
+        if (wizardLife <= 0) return "battle/win";
         for (var v : magic) {
             if (v.getDescriptionEng().equals(previousSkill)&&!skip) v.setRecharge(10);
         }
@@ -680,14 +681,14 @@ public class ControllerBattle {
         model.addAttribute("defenceEffect",defenceEffect);
         model.addAttribute("increaseAttackEffect",increaseAttackEffect);
         model.addAttribute("decreaseAttackEffect",decreaseAttackEffect);
-        return "/battle/shot";
+        return "battle/shot";
     }
 
     @GetMapping("/lightning")
     public String lightning(Model model){
         decreaseAttackEffect = 0;
         defenceEffect = 0;
-        if (wizardLife <= 0) return "/battle/win";
+        if (wizardLife <= 0) return "battle/win";
         for (var v : magic) {
             if (v.getDescriptionEng().equals(previousSkill)&&!skip) v.setRecharge(10);
         }
@@ -725,14 +726,14 @@ public class ControllerBattle {
         model.addAttribute("defenceEffect",defenceEffect);
         model.addAttribute("increaseAttackEffect",increaseAttackEffect);
         model.addAttribute("decreaseAttackEffect",decreaseAttackEffect);
-        return "/battle/lightning";
+        return "battle/lightning";
     }
 
     @GetMapping("/falling")
     public String falling(Model model){
         decreaseAttackEffect = 0;
         defenceEffect = 0;
-        if (wizardLife <= 0) return "/battle/win";
+        if (wizardLife <= 0) return "battle/win";
         for (var v : magic) {
             if (v.getDescriptionEng().equals(previousSkill)&&!skip) v.setRecharge(10);
         }
@@ -770,14 +771,14 @@ public class ControllerBattle {
         model.addAttribute("defenceEffect",defenceEffect);
         model.addAttribute("increaseAttackEffect",increaseAttackEffect);
         model.addAttribute("decreaseAttackEffect",decreaseAttackEffect);
-        return "/battle/falling";
+        return "battle/falling";
     }
 
     @GetMapping("/blackFire")
     public String blackFire(Model model){
         decreaseAttackEffect = 0;
         defenceEffect = 0;
-        if (wizardLife <= 0) return "/battle/win";
+        if (wizardLife <= 0) return "battle/win";
         for (var v : magic) {
             if (v.getDescriptionEng().equals(previousSkill)&&!skip) v.setRecharge(10);
         }
@@ -815,13 +816,13 @@ public class ControllerBattle {
         model.addAttribute("defenceEffect",defenceEffect);
         model.addAttribute("increaseAttackEffect",increaseAttackEffect);
         model.addAttribute("decreaseAttackEffect",decreaseAttackEffect);
-        return "/battle/blackFire";
+        return "battle/blackFire";
     }
 
     @GetMapping("/bloodSucker")
     public String bloodSucker(Model model){
         decreaseAttackEffect = 0;
-        if (wizardLife <= 0) return "/battle/win";
+        if (wizardLife <= 0) return "battle/win";
         for (var v : magic) {
             if (v.getDescriptionEng().equals(previousSkill)&&!skip) v.setRecharge(10);
         }
@@ -849,7 +850,7 @@ public class ControllerBattle {
         model.addAttribute("defenceEffect",defenceEffect);
         model.addAttribute("increaseAttackEffect",increaseAttackEffect);
         model.addAttribute("decreaseAttackEffect",decreaseAttackEffect);
-        return "/battle/bloodSucker";
+        return "battle/bloodSucker";
     }
 
     public int findFinalDamageWeapon(String weapon, int damage){
@@ -905,7 +906,7 @@ public class ControllerBattle {
         model.addAttribute("defenceEffect",defenceEffect);
         model.addAttribute("increaseAttackEffect",increaseAttackEffect);
         model.addAttribute("decreaseAttackEffect",decreaseAttackEffect);
-        return "/battle/stun";
+        return "battle/stun";
     }
 
     public void updateEffects(){
@@ -935,5 +936,10 @@ public class ControllerBattle {
         else if (magic.equals("mysticFog")) hint = "завдає ураження до ".concat(String.valueOf(mysticFog.getDamage())).concat(" од. Регенерує здоров'я на ").concat(String.valueOf(mysticFog.getImpactVolume())).concat(" од.");
         else if (magic.equals("burningWind")) hint = "завдає ураження до ".concat(String.valueOf(burningWind.getDamage())).concat(" од. Зменшує атаку ворога на ").concat(String.valueOf(burningWind.getImpactVolume())).concat("%.");
         return hint;
+    }
+
+    @GetMapping("finishGame")
+    public void finishGame(){
+        MentalBattleApplication.closeApp();
     }
 }

@@ -104,25 +104,25 @@ public class ControllerMarket {
         context = new AnnotationConfigApplicationContext(Config.class);
         money = controllerFarmer.getMoney();
         model.addAttribute("money",money);
-        return "/market/market";
+        return "market/market";
     }
 
     @GetMapping("/merchant1")
     public String merchant1(Model model){
         model.addAttribute("money",money);
-        return "/market/merchant1";
+        return "market/merchant1";
     }
 
     @GetMapping("/merchant2")
     public String merchant2(Model model){
         model.addAttribute("money",money);
-        return "/market/merchant2";
+        return "market/merchant2";
     }
 
     @GetMapping("/merchant3")
     public String merchant3(Model model){
         model.addAttribute("money",money);
-        return "/market/merchant3";
+        return "market/merchant3";
     }
 
     @GetMapping("/products")
@@ -131,7 +131,7 @@ public class ControllerMarket {
             model.addAttribute("magic".concat(String.valueOf(i+1)),purchasedMagic.get(i).getDescription());
         }
         model.addAttribute("money",money);
-        return "/market/products";
+        return "market/products";
     }
 
     @GetMapping("/magic")
@@ -140,7 +140,7 @@ public class ControllerMarket {
             model.addAttribute("magic".concat(String.valueOf(i+1)),purchasedMagic.get(i).getDescription());
         }
         model.addAttribute("money",money);
-        return "/market/magic";
+        return "market/magic";
     }
 
     @GetMapping("/weapon")
@@ -149,7 +149,7 @@ public class ControllerMarket {
             model.addAttribute("magic".concat(String.valueOf(i+1)),purchasedMagic.get(i).getDescription());
         }
         model.addAttribute("money",money);
-        return "/market/weapon";
+        return "market/weapon";
     }
 
     @GetMapping("/finishShopping")
@@ -157,7 +157,7 @@ public class ControllerMarket {
         for (int i = 0; i < purchasedMagic.size(); i++){
             model.addAttribute("magic".concat(String.valueOf(i+1)),purchasedMagic.get(i).getDescription());
         }
-        return "/market/finishShopping";
+        return "market/finishShopping";
     }
 
     @GetMapping("/fire")
@@ -205,12 +205,12 @@ public class ControllerMarket {
             }
         }
         model.addAttribute("money",money);
-        return "/market/fire";
+        return "market/fire";
     }
 
     @RequestMapping(value = "makePurchase", method = RequestMethod.POST)
     public String makePurchase(Model model, @RequestParam(value = "name") String name){
-        String target = "/market/products";
+        String target = "market/products";
         switch (name) {
             case "meteorRain":
                 if (money>=meteorRain.getPrice()) {
@@ -435,7 +435,7 @@ public class ControllerMarket {
             }
         }
         model.addAttribute("money",money);
-        return "/market/water";
+        return "market/water";
     }
 
     @GetMapping("/earth")
@@ -483,7 +483,7 @@ public class ControllerMarket {
             }
         }
         model.addAttribute("money",money);
-        return "/market/earth";
+        return "market/earth";
     }
 
     @GetMapping("/air")
@@ -531,7 +531,7 @@ public class ControllerMarket {
             }
         }
         model.addAttribute("money",money);
-        return "/market/air";
+        return "market/air";
     }
 
     @GetMapping("/bows")
@@ -553,7 +553,7 @@ public class ControllerMarket {
                 model.addAttribute("descriptionWoodenBow","");
                 model.addAttribute("descriptionCrossbow","");
                 model.addAttribute("descriptionLegendaryBow","");
-                return "/market/bows";
+                return "market/bows";
             }
         }
         int priceWoodenBow = woodenBow.getPrice();
@@ -571,7 +571,7 @@ public class ControllerMarket {
         model.addAttribute("priceLegendaryBow",priceLegendaryBow);
         model.addAttribute("damageLegendaryBow",damageLegendaryBow);
         model.addAttribute("descriptionLegendaryBow","Легендарний лук");
-        return "/market/bows";
+        return "market/bows";
     }
 
     @GetMapping("/swords")
@@ -593,7 +593,7 @@ public class ControllerMarket {
                 model.addAttribute("descriptionAncientSword","");
                 model.addAttribute("descriptionDagger","");
                 model.addAttribute("descriptionKatana","");
-                return "/market/swords";
+                return "market/swords";
             }
         }
         int priceAncientSword = ancientSword.getPrice();
@@ -611,7 +611,7 @@ public class ControllerMarket {
         model.addAttribute("priceKatana",priceKatana);
         model.addAttribute("damageKatana",damageKatana);
         model.addAttribute("descriptionKatana","Катана");
-        return "/market/swords";
+        return "market/swords";
     }
 
     @GetMapping("/hammers")
@@ -633,7 +633,7 @@ public class ControllerMarket {
                 model.addAttribute("descriptionBlacksmithHammer","");
                 model.addAttribute("descriptionMace","");
                 model.addAttribute("descriptionThunderHammer","");
-                return "/market/hammers";
+                return "market/hammers";
             }
         }
         int priceBlacksmithHammer = blacksmithHammer.getPrice();
@@ -651,7 +651,7 @@ public class ControllerMarket {
         model.addAttribute("priceThunderHammer",priceThunderHammer);
         model.addAttribute("damageThunderHammer",damageThunderHammer);
         model.addAttribute("descriptionThunderHammer","Молот Грому");
-        return "/market/hammers";
+        return "market/hammers";
     }
 
     @GetMapping("/equipment")
@@ -665,7 +665,7 @@ public class ControllerMarket {
                 model.addAttribute("descriptionRomeMail","");
                 model.addAttribute("descriptionShogunArmor","");
                 model.addAttribute("descriptionProtectiveShield","");
-                return "/market/equipment";
+                return "market/equipment";
             }
         }
         int priceRomeMail = romeMail.getPrice();
@@ -683,7 +683,7 @@ public class ControllerMarket {
         model.addAttribute("priceProtectiveShield",priceProtectiveShield);
         model.addAttribute("protectionValueProtectiveShield",protectionValueProtectiveShield);
         model.addAttribute("descriptionProtectiveShield","Силове поле");
-        return "/market/equipment";
+        return "market/equipment";
     }
 
     public String notEnoughMoney (Model model){
@@ -691,7 +691,7 @@ public class ControllerMarket {
             model.addAttribute("magic".concat(String.valueOf(i+1)),purchasedMagic.get(i).getDescription());
         }
         model.addAttribute("money",money);
-        return "/market/notEnoughMoney";
+        return "market/notEnoughMoney";
     }
 
     public List<MagicSkill> getPurchasedMagic(){
@@ -705,13 +705,4 @@ public class ControllerMarket {
         return purchasedCloth;
     }
 
-    @GetMapping("/cheat")
-    public String Cheat(Model model){
-        for (int i = 0; i < purchasedMagic.size(); i++){
-            model.addAttribute("magic".concat(String.valueOf(i+1)),purchasedMagic.get(i).getDescription());
-        }
-        money = 1500;
-        model.addAttribute("money",money);
-        return "/market/products";
-    }
 }

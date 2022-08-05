@@ -37,17 +37,17 @@ public class ControllerFarmer {
     @GetMapping("/")
     public String farmer1(){
         context = new AnnotationConfigApplicationContext(Config.class);
-        return "/farmer/farmer1";
+        return "farmer/farmer1";
     }
 
     @GetMapping("/farmer2")
     public String farmer2(){
-        return "/farmer/farmer2";
+        return "farmer/farmer2";
     }
 
     @GetMapping("/farmer3")
     public String farmer3(){
-        return "/farmer/farmer3";
+        return "farmer/farmer3";
     }
 
     @GetMapping("/test1")
@@ -62,7 +62,7 @@ public class ControllerFarmer {
         String timeString = "test".concat(String.valueOf(++times));
         model.addAttribute("riddle",riddle);
         model.addAttribute("times",timeString);
-        return "/farmer/test";
+        return "farmer/test";
     }
 
     @RequestMapping(value = {"/test2","/test3","/test4","/test5","/test6",
@@ -87,7 +87,7 @@ public class ControllerFarmer {
         model.addAttribute("correctAnswers",correctAnswers);
         model.addAttribute("wrongAnswers",wrongAnswers);
         model.addAttribute("times",timeString);
-        return "/farmer/test";
+        return "farmer/test";
     }
 
     @RequestMapping(value = "/test11", method = RequestMethod.POST)
@@ -105,6 +105,6 @@ public class ControllerFarmer {
         model.addAttribute("money",money);
         model.addAttribute("correctAnswers",correctAnswers);
         model.addAttribute("wrongAnswers",wrongAnswers);
-        return "/farmer/finishTest";
+        return "farmer/finishTest";
     }
 }
